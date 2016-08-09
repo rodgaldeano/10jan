@@ -23,7 +23,7 @@ basedir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '')
 # For more information about the client_secrets.json file format, see:
 #   https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
 
-CLIENT_SECRETS_FILE = "/home/rodrigo/py/10jan/client_secrets.json"
+CLIENT_SECRETS_FILE = "client_secrets.json"
 
 # This variable defines a message to display if the CLIENT_SECRETS_FILE is
 # missing.

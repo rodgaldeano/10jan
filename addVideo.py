@@ -10,7 +10,7 @@ from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
 from oauth2client.tools import argparser, run
 
-basedir = os.path.dirname(os.path.realpath(__file__)) + '/'
+basedir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '')
 
 # The CLIENT_SECRETS_FILE variable specifies the name of a file that contains
 # the OAuth 2.0 information for this application, including its client_id and

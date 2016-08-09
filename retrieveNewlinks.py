@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import facebook, requests
+import os
 
 def get_fb_token(app_id, app_secret):
     payload = {'grant_type': 'client_credentials', 'client_id': app_id, 'client_secret': app_secret}
@@ -14,7 +15,7 @@ access_token=get_fb_token(1749981128573326,'f48d2715f97244d8ece9f3337de25a08')
 graph=facebook.GraphAPI(access_token, version='2.6')
 grupo=graph.get_connections(id='1593568867531347', connection_name='feed')
 
-basedir='/home/rodrigo/py/10jan/'
+basedir = os.path.dirname(os.path.realpath(__file__))
 basedate=open(basedir+'newlinksFound.txt').readline().strip()
 newdate=basedate
 allposts = []

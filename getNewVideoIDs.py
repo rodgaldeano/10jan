@@ -3,7 +3,7 @@ import re
 import datetime
 import os
 
-basedir = os.path.dirname(os.path.realpath(__file__))
+basedir = os.path.dirname(os.path.realpath(__file__)) + '/'
 
 regex=r'(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/|attribution_link\?a=))([^\?&%#\s]+)'
 cant=0

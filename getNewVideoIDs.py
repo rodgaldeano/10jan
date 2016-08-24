@@ -5,7 +5,8 @@ import os
 
 basedir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '')
 
-regex=r'(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/|attribution_link\?a=))'
+regex=r'(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/|attribution_link\?a=))([^\?&%#\s]+)'
+
 cant=0
 file=open(basedir+'videoIDs.txt','w')
 #file.write(str(datetime.datetime.now()) + '\n')
@@ -16,8 +17,10 @@ for elem in contenido.splitlines():
     i=re.split(regex, elem)
     try:
         id=i[-2]
-        if id.find('http')!=-1:
-            id=id[:id.find('http')]
+        if id.find('%3D')!=-1:
+            print(id)
+            id=id[id.find('%3D')+2:]
+            id=id[:id.find('%')]
         file.write(id + '\n')
         cant+=1
     except:

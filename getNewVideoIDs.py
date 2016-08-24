@@ -5,7 +5,7 @@ import os
 
 basedir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '')
 
-regex=r'(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/|attribution_link\?a=))([^\?&%#\s]+)'
+regex=r'(youtu\.be\/|youtube\.com\/(watch\?(.*&)?v=|(embed|v)\/|attribution_link\?a=))'
 cant=0
 file=open(basedir+'videoIDs.txt','w')
 #file.write(str(datetime.datetime.now()) + '\n')

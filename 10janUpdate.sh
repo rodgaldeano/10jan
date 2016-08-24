@@ -1,4 +1,7 @@
 #!/bin/sh
-/home/rodrigo/py/10jan/retrieveNewlinks.py
-/home/rodrigo/py/10jan/getNewVideoIDs.py
-/home/rodrigo/py/10jan/addVideo.py
+
+# dir donde esta almacenado este script
+DIR="$(dirname $0)"
+$DIR/retrieveNewlinks.py
+$DIR/getNewVideoIDs.py
+$DIR/addVideo.py

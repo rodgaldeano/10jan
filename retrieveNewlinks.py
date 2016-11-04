@@ -51,5 +51,7 @@ while(True):
 
 file=open(basedir+'newlinksFound.txt','w')
 file.write(newdate + '\n')
+for i in allposts:
+    file.write(i + '\n')
 file.close()
 #log.close()

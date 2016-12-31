@@ -24,13 +24,15 @@ for elem in contenido.splitlines():
     i=re.split(regex, elem)
     try:
         id=i[-2]
-        print(id)
+        #print(id)
         if id.find(r'%3D')!=-1:
-            print(id)
+            #print(id)
             id=id[id.find('%3D')+3:]
-            print(id)
+            #print(id)
             id=id[:id.find('%')]
-            print(id)
+            #print(id)
+        elif id.find('&'):
+            id=id[:id.find('&')]
         file.write(id + '\n')
         cant+=1
     except:

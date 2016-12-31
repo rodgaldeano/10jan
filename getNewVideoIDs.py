@@ -31,8 +31,10 @@ for elem in contenido.splitlines():
             #print(id)
             id=id[:id.find('%')]
             #print(id)
-        elif id.find('&'):
+        elif id.find('&')!=-1:
             id=id[:id.find('&')]
+        elif id.find('?t=')!=-1:
+            id=id[:id.find('?t=')]
         file.write(id + '\n')
         cant+=1
     except:

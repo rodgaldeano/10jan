@@ -7,7 +7,9 @@ def get_fb_token(app_id, app_secret):
     payload = {'grant_type': 'client_credentials', 'client_id': app_id, 'client_secret': app_secret}
     file = requests.post('https://graph.facebook.com/oauth/access_token?', params = payload)
     #print file.text #to test what the FB api responded with    
-    result = file.text.split("=")[1]
+    token_dict=eval(file.text)
+    #print token_dict,type(token_dict)
+    result = token_dict['access_token']
     #print result #to test the TOKEN
     return result
 

@@ -1,0 +1,7 @@
+Requerimientos para que el script funcione:
+
+#pip install facebook-sdk
+#pip install httplib2
+#pip install google-api-python-client
+
+donde 'pip' es el de Python 2.

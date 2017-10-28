@@ -8,7 +8,8 @@ from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
-from oauth2client.tools import argparser, run
+from oauth2client.tools import argparser
+from oauth2client import tools
 
 basedir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '')
 
@@ -58,7 +59,7 @@ def get_authenticated_service():
     credentials = storage.get()
 
     if credentials is None or credentials.invalid:
-                    credentials = run(flow, storage)
+                    credentials = tools.run_flow(flow, storage)
 
     return build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
                         http=credentials.authorize(httplib2.Http()))

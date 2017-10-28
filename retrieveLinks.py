@@ -3,11 +3,12 @@
 import facebook, requests
 
 def get_fb_token(app_id, app_secret):
-    payload = {'grant_type': 'client_credentials', 'client_id': app_id, 'client_secret': app_secret}
+    payload = {'grant_type': 'client_credentials','client_id': app_id, 'client_secret': app_secret}
     file = requests.post('https://graph.facebook.com/oauth/access_token?', params = payload)
-    #print file.text #to test what the FB api responded with    
-    result = file.text.split("=")[1]
+    result=file.text.split(':')[1].split(',')[0]#to test what the FB api responded with    
+    result=result[1:len(result)-1]
     #print result #to test the TOKEN
+    print result
     return result
 
 access_token=get_fb_token(1749981128573326,'f48d2715f97244d8ece9f3337de25a08')
